@@ -1,0 +1,46 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "tacz_tp_anim"
+version = "1.0.1"
+displayName = "TACZ Third Person Animations"
+authors = "skyplayer"
+description = '''
+Plays TACZ first-person gun animations (reload, inspect, shoot, bolt, draw...) on the third-person gun model,
+for yourself in F5 and for every other player. Also syncs hotbars so TACZ's sling display is visible to everyone.
+'''
+
+[[mixins]]
+config = "tacz_tp_anim.mixins.json"
+
+[[dependencies.tacz_tp_anim]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.tacz_tp_anim]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.tacz_tp_anim]]
+modId = "tacz"
+type = "required"
+versionRange = "[1.1.8,)"
+ordering = "AFTER"
+side = "BOTH"
+
+# This mod replaces tacz_sling_sync; running both just sends the hotbar twice.
+[[dependencies.tacz_tp_anim]]
+modId = "tacz_sling_sync"
+type = "discouraged"
+reason = "TACZ Third Person Animations already includes the sling sync feature. Remove tacz-sling-sync-1.0.0.jar."
+versionRange = "*"
+ordering = "NONE"
+side = "BOTH"
